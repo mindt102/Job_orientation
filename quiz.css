@@ -1,0 +1,104 @@
+html,body,#root {
+    width: 100%;
+    height: 100%;
+    margin: 0px;    
+}
+
+.row {
+    display: flex;
+    flex-flow: row; 
+}
+
+#btn-container {
+    margin-top: 10px;
+    width: 100px;
+    justify-content: space-between;
+}
+
+#top {
+    width: 100%;
+    height: 75px;
+}
+
+#mid {
+    width: 100%;
+    height: 100%;
+}
+
+#q-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: black solid 1px;
+}
+
+#progress_container {
+    height: 100%;
+    width: 400px;
+    border: black solid 1px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#finish-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 400px;
+    height: 100%;
+}
+#q-sequence {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    border: black solid 1px;
+}
+
+
+
+#question,#input {
+    width: 15rem;
+    height: 15rem;
+    border: black solid 1px;
+}
+
+#question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+#input {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+#view-all-btn,#submit-btn {
+    padding: 1px 6px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.options {
+    cursor: pointer;
+}
+
+#view-all-container,#submit-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#answers-container {
+    border: solid black 1px;
+    width: 750px;
+    height: 100%;
+}
