@@ -1,4 +1,4 @@
-let id = '45-4021.00'
+let id = window.location.search.substring(4)
 let job = {}
 for (let i=0;i<data.length;i++) {
     if (data[i].id == id) {
@@ -52,13 +52,13 @@ for (let i=0;i<abilities.length;i++) {
 
 let contentHTML = `    
 <div style="display:flex;justify-content: center;color: #004488;margin:20px"><h1 style="font-size:50px"><b id="accountants"> ${name}</b></h1></div> 
-<div class="row" style="justify-content:space-around;margin-top:50px;">
-    <div id="description-container" class="rectangle">
+<div class="row" style="justify-content:center;margin-top:50px;">
+    <div id="description-container" class="rectangle" style="margin-right:20px">
         <p> <div> <b> Description </b> </div> 
             ${description}
         </p>
     </div>
-    <div id="tasks-container" class="rectangle">
+    <div id="tasks-container" class="rectangle" style="margin-left:20px">
         <div> <b id="task">Tasks</b> </div> 
         <ul>
             ${tasksHTML}
@@ -66,24 +66,21 @@ let contentHTML = `
     </div>
 </div>
 
-<div id="circle-container" style="margin-top:50px;display:flex;flex-flow:column;">
-    <div id="circle-top" style="margin:50px;display:flex;flex-flow:row;justify-content:center">
-        <div class="square">
-            <h1 id="title" style="font-family: 'Amatic SC', cursive; color:#660066;text-align:center">KNOWLEDGE</h1>
-            ${knowledgeHTML}
-        </div>
+<div id="square-container">
+    <div class="square" style="border-color:#660066">
+        <h1 id="title" style="font-family: 'Amatic SC', cursive; color:#660066;text-align:center">KNOWLEDGE</h1>
+        ${knowledgeHTML}
     </div>
-    <div id="circle-bot">
-        <div class="square">
-            <h1 style="font-family: 'Amatic SC', cursive; color: #cc5200;text-align:center">SKILLS</h1>
-            ${skillsHTML}
-        </div>    
-        
-        <div class="square">
-            <h1 style="font-family: 'Amatic SC', cursive; color: #000080;text-align:center">ABILITIES</h1>
-            ${abilitiesHTML}
-        </div>
+    <div class="square" style="border-color:#cc5200">
+        <h1 style="font-family: 'Amatic SC', cursive; color: #cc5200;text-align:center">SKILLS</h1>
+        ${skillsHTML}
     </div>    
+    
+    <div class="square" style="border-color:#000080">
+        <h1 style="font-family: 'Amatic SC', cursive; color: #000080;text-align:center">ABILITIES</h1>
+        ${abilitiesHTML}
+    </div>
+
 </div>
 
 `
