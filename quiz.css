@@ -11,9 +11,34 @@ html,body,#root {
 
 #btn-container {
     margin-top: 10px;
-    width: 100px;
+    width: 500px;
     justify-content: space-between;
+    
 }
+
+#back-btn {
+    background-color: rgb(170, 20, 170);
+    color: white;
+    border-radius: 10px 0px 0px 10px;
+    width: 150px;
+    text-align: center;
+    border-right-color: white;
+    border-width: 30px;
+    cursor: pointer;
+    }
+
+#next-btn {
+        background-color: rgb(170, 20, 170);
+        color: white;
+        border-radius: 0px 10px 10px 0px;
+        width: 150px;
+        text-align: center;
+        border-left-color: white;
+        border-width: 30px;
+        cursor: pointer;
+        }
+
+
 
 #top {
     width: 100%;
@@ -30,7 +55,7 @@ html,body,#root {
     width: 100%;
     display: flex;
     align-items: center;
-    border: black solid 1px;
+    background-color: rgb(122, 64, 136);
 }
 
 #progress_container {
@@ -39,8 +64,14 @@ html,body,#root {
     border: black solid 1px;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+
+#rising-progress {
+    height: 0%;
+    width: 100%;    
+    /* background-color: red; */
 }
 
 #finish-container {
@@ -57,7 +88,6 @@ html,body,#root {
     justify-content: center;
     flex-flow: column;
     align-items: center;
-    border: black solid 1px;
 }
 
 
@@ -72,13 +102,23 @@ html,body,#root {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center
+    text-align: center;
+    border-radius: 20px 0px 0px 20px;
+    background-color: blueviolet;
+    font-weight: bold;
+    color: white;
+    font-size: large;
+    border-color: blueviolet;
 }
 
 #input {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    border-radius: 0px 20px 20px 0px;
+    border-color: white;
+    background-color: white;
+
 }
 
 #view-all-btn,#submit-btn {
@@ -89,6 +129,14 @@ html,body,#root {
 
 .options {
     cursor: pointer;
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+.options:hover {
+    background-color: gray;
+    color: white;
+    font: bold;
 }
 
 #view-all-container,#submit-container {

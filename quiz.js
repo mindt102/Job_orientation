@@ -163,9 +163,27 @@ function printProgress(i,q) {
     var progress = document.getElementById("progress")
     progress.textContent = ""
     var question_numb = q*6+i+1
+    if (1 <= question_numb & question_numb <= 30) {
+        green += 9
+        if (green > 255) {
+            green = 255
+        }
+    }
+    else {
+        red -= 9
+        if (red < 0) {
+            red = 0
+        }
+    }
+    let precentage = Math.floor(question_numb/60*100)
     var progressHTML = `
-        ${question_numb}/60
+        ${precentage}%
     `
+    let color = `rgb(${red},${green},0)`
+    console.log(color)
+    let rising_progress = document.getElementById("rising-progress")
+    rising_progress.style.backgroundColor = color
+    rising_progress.style.height = `${precentage}%`
     progress.insertAdjacentHTML("beforeend",progressHTML)
 }
 
@@ -176,6 +194,8 @@ var question_div = document.getElementById("question")
 var input_div = document.getElementById("input")
 var question = quiz_data[i]["questions"][q]
 
+var red = 255
+var green = 0
 printQuestion(question)
 printProgress(i,q)
 var next_btn = document.getElementById("next-btn")
