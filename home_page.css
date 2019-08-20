@@ -9,14 +9,15 @@ html , body, #root {
     justify-content: space-between;
 }
 body {
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
+    font-family: 'Nunito Sans', sans-serif;
     background-image: url("main_pic.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed ;
 }
 
-#mid {
+#content {
     display: flex;
     align-items: flex-start;
     height: 500px;
@@ -96,94 +97,6 @@ body {
 
 }
 
-/* Footer CSS */
-#footer {
-    margin-top: 200px;
-}
 
-#ABOUT {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-.align-smaller-abouts {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-flow: column;
-    width: 200px;
-}
-
-.text-align {
-    text-align: justify;
-}
-
-/* Header CSS */
-#header {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.row {
-    display: flex;
-    flex-flow: row;
-}
-
-.icon {
-    height:50px;
-}
-
-#align-icons {
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row;
-    width: 180px;
-}
-
-#search_bar {
-    margin: 10px 10px 0px;
-    width: 250px;
-    border-radius: 10px;
-    height: 15px;
-    padding: 2px 8px;
-}
-
-.autocomplete {
-    margin-left: 10px;
-    width:100%;
-    height:20px;
-    background-color:white;
-    border: solid grey 0.2px;
-    cursor: pointer;
-}
-
-.autocomplete:hover {
-    background-color: #e9e9e9;
-}
-
-.autocomplete-active {
-    background-color: DodgerBlue !important; 
-    color: #ffffff; 
-}
-
-#top_left {
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: row;
-    width: 500px;
-    height: 100px;
-}
-
-#Logo {
-    background-image: url("Logo-removebg-preview.png");
-    width: 150px;
-    height: 150px;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 
 
