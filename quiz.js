@@ -184,7 +184,8 @@ function printProgress(i,q) {
     let rising_progress = document.getElementById("rising-progress")
     rising_progress.style.backgroundColor = color
     rising_progress.style.height = `${precentage}%`
-    progress.insertAdjacentHTML("beforeend",progressHTML)
+    progress.insertAdjacentHTML("beforeend",progressHTML);
+    document.getElementById('q-2').style.backgroundColor = color;
 }
 
 // Set question
