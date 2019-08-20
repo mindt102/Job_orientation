@@ -76,9 +76,10 @@ function search(inpString) {
         let jobName = data[i].job.toLowerCase()
         if (jobName.startsWith(inpString)) {
             resultsCount ++
-            var name = data[i].job 
-            if (name.length >= 35) {
-                name = name.substring(0,32)
+            let name = data[i].job 
+            let limitLength = 30
+            if (name.length >= limitLength) {
+                name = name.substring(0,limitLength)
                 name += "..."
             }
             searchResults += `<div id=${data[i].id} class="autocomplete">${name}</div>`
