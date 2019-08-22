@@ -113,11 +113,11 @@ function printQuestion (q_numb) {
     var contentHTML = `
     <div id="question">${question}</div>
     <div id="input">
-        <div class="options"><div class="number">1</div><div class="label">Hate</div></div>
+        <div class="options" style="border-radius: 0px 20px 0px 0px;"><div class="number" >1</div><div class="label">Hate</div></div>
         <div class="options"><div class="number">2</div><div class="label">Dislike</div></div>
         <div class="options"><div class="number">3</div><div class="label">Neutral</div></div>
         <div class="options"><div class="number">4</div><div class="label">Like</div></div>
-        <div class="options"><div id="last" class="number">5</div><div class="label">Love</div></div>
+        <div class="options" style="border-radius: 0px 0px 20px 0px;"><div id="last" class="number">5</div><div class="label">Love</div></div>
     </div>
     `
     q_block.insertAdjacentHTML("beforeend",contentHTML)
@@ -129,9 +129,12 @@ function addRadioEvent () {
     for (var o=0;o<options.length;o++) {
         var option = options[o]
         option.addEventListener("click",function (e) {
-            if (e.target.hasAttribute("name") == false) {
-                e.target.firstElementChild.checked = true
+            let clicked_btn = e.target
+            if (clicked_btn.className != "options") {
+                clicked_btn = clicked_btn.parentNode
             }
+            console.log(options[0])
+            console.log(clicked_btn.getElementsByClassName("number"))
         })
     }
 }

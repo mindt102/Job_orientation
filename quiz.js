@@ -165,9 +165,9 @@ function printProgress(i,q) {
     var question_numb = q*6+i+1
     let rising_progress = document.getElementById("rising-progress")
     
-    let precentage = Math.floor(question_numb/60*100)
+    let percentage = Math.floor(question_numb/60*100)
     var progressHTML = `
-        ${precentage}%
+        ${percentage}%
     `
     progress.insertAdjacentHTML("beforeend",progressHTML);
     let height = parseInt(rising_progress.style.height.substring(0,3)) / 60
