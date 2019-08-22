@@ -45,7 +45,7 @@ html,body,#root {
     height: 75px;
 }
 
-#mid {
+#content {
     width: 100%;
     height: 100%;
 }
@@ -67,22 +67,10 @@ html,body,#root {
     width: 400px;
     display: flex;
     flex-flow: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
 }
 
-#purple {
-    background-color: mediumorchid;
-    width: 100%;
-    height: 100%;
-}
-
-#rising-progress {
-    height: 0%;
-    width: 100%;    
-    
-    /* background-color: red; */
-}
 
 #finish-container {
     display: flex;
@@ -98,7 +86,6 @@ html,body,#root {
     justify-content: center;
     flex-flow: column;
     align-items: center;
-    position: fixed
 }
 
 
@@ -142,13 +129,16 @@ html,body,#root {
     cursor: pointer;
     height: 20%;
     display: flex;
+    flex-flow: row;
     align-items: center;
 }
 .options:hover {
     background-color: gray;
     color: white;
     font: bold;
+    /* border: 0px; */
 }
+
 
 #view-all-container,#submit-container {
     display: flex;
@@ -163,3 +153,20 @@ html,body,#root {
     
 }
 
+.number {
+    width: 30px;
+    height: 30px;
+    border: solid black 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8.5px;
+    border-radius: 7px;
+}
+
+.label {
+    margin-left: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

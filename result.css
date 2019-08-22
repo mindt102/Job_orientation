@@ -13,28 +13,25 @@ html,body,#root {
     align-items: center;
     border-top: grey solid 2px;
     border-bottom: grey solid 2px;
-    padding: 20px 0px;
+    padding: 20px 0px 30px 0px;
 }
 .containers {
     padding: 15px 0px;
-    margin-top: 15px 0px;
+    /* margin-top: 15px 0px; */
     height: 200px;
     width: 90%;
     display: flex;
     flex-flow: row;
     /* border-top: grey solid 0.5px; */
-    border-bottom: grey solid 2px;
-    display: flex;
-    flex-flow: row;
+    align-items: center;
     justify-content: flex-start; 
 }
 .points {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 190px;
     height: 100%;
-    /* border: white solid 0.5px; */
     font-size: 50px;
 }
 .images {
@@ -48,19 +45,30 @@ html,body,#root {
 
 .interests {
     /* border: white solid 0.5px; */
-    width: 160px;
+    width: 100px;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     font-size: 50px;
+    padding-right: 20px;
 }
 .details {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    padding: 0px 30px;
-    /* border: white solid 0.5px; */
+    padding: 15px 40px 15px 40px;
     height: 100%;
     width: 100%;
+    border-bottom: grey solid 2px;
+}
+
+.left-half {
+    display: flex;
+    flex-flow: row;
+    width: 500px;
+    height: 100%;
+    border-bottom: grey solid 2px;
+    padding: 15px 0px;
+    margin: 0px 70px 0px 0px;
 }

@@ -110,7 +110,7 @@ function printResults() {
     console.log("")
 }
 function printQuestion (question) {
-    var content = document.getElementById("content")
+    var content = document.getElementById("q-block")
     content.textContent = ""
     var contentHTML = `
     <div id="question">${question}</div>
@@ -163,36 +163,50 @@ function printProgress(i,q) {
     var progress = document.getElementById("progress")
     progress.textContent = ""
     var question_numb = q*6+i+1
-    if (1 <= question_numb & question_numb <= 30) {
-        green += 9
-        if (green > 255) {
-            green = 255
-        }
-    }
-    else {
-        red -= 9
-        if (red < 0) {
-            red = 0
-        }
-    }
+    let rising_progress = document.getElementById("rising-progress")
+    
     let precentage = Math.floor(question_numb/60*100)
     var progressHTML = `
         ${precentage}%
     `
-    let color = `rgb(${red},${green},0)`
-    console.log(color)
-    let rising_progress = document.getElementById("rising-progress")
-    rising_progress.style.backgroundColor = color
-    rising_progress.style.height = `${precentage}%`
     progress.insertAdjacentHTML("beforeend",progressHTML);
-    document.getElementById('q-2').style.backgroundColor = color;
+    let height = parseInt(rising_progress.style.height.substring(0,3)) / 60
+    let white_space = document.getElementById("white-space")
+    white_space.style.height = `${height*(60-question_numb)}px`
+    // if  (question_numb > rising_progress.childElementCount) {
+    //     if (1 <= question_numb & question_numb <= 30) {
+    //         green += 9
+    //         if (green > 255) {
+    //             green = 255
+    //         }
+    //     }
+    //     else {
+    //         red -= 9
+    //         if (red < 0) {
+    //             red = 0
+    //         }
+    //     }
+    //     let color = `rgb(${red},${green},0)`
+    //     let height = parseInt(rising_progress.style.height.substring(0,3)) / 60
+    //     let colordivHTML = `
+    //         <div id="color${question_numb}" style="width:100%;height: ${height}px;background-color: ${color}"></div>
+    //     `
+    //     rising_progress.insertAdjacentHTML("afterbegin",colordivHTML)    
+    // }
+    // else {
+    //     let currentdiv = document.getElementById(`color${question_numb + 1}`)
+    //     rising_progress.removeChild(currentdiv)
+    //     if (1 <= question_numb & question_numb <= 30) {
+    //         green -= 9}
+    //     else {red += 9}
+    // }
 }
 
 // Set question
 var q = 0 //question index
 var i = 0 //interest index
-var question_div = document.getElementById("question")
-var input_div = document.getElementById("input")
+// var question_div = document.getElementById("question")
+// var input_div = document.getElementById("input")
 var question = quiz_data[i]["questions"][q]
 
 var red = 255

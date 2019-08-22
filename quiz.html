@@ -11,12 +11,10 @@
 <body>
     <div id="root">
         <div id="top"></div>
-        <div id="mid" class="row">
-            <div id="q-container">
-                <div id="q-2"></div>
+        <div id="content" class="row">
+            <div id="q-container" style="background: linear-gradient(to top, #ff6666 0%, #99ff33 100%);">
                 <div id="q-sequence">
-                    <div id="content" class="row">
-
+                    <div id="q-block" class="row">
                     </div>
                     <div class="row" id="btn-container">
                         <div id="back-btn">Back</div>
@@ -30,18 +28,16 @@
                     <div>Progress: </div>
                     <div id="progress" style="z-index: 0"></div>
                 </div>
-                <div style="height: 100%;width: 100%;display: flex;align-items: flex-end">
-                    <div >
-                        <div id="purple"></div>
-                    </div>
-                    <div id="rising-progress" style="z-index: -2"></div>
+                <div id="rising-progress" style="height: 690px;width: 100%;display: flex;justify-content: flex-start;flex-flow: column;background: linear-gradient(to top right, #33ccff 0%, #ff99cc 100%)">
+                    <div id="white-space" style="height: 100px;width:100%;background-color: white"></div>
                 </div>
                 
             </div>
         </div>
     </div>
 
-    <script src="quiz.js"></script>
+    <!-- <script src="quiz.js"></script> -->
+    <script src="quiz_2.js"></script>
 </body>
 </html>
 
