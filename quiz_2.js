@@ -97,8 +97,8 @@ function printQuestion (q_numb) {
     var q_block = document.getElementById("q-block")
     q_block.textContent = ""
     var contentHTML = `
-    <div id="question">${question}</div>
-    <div id="input">
+    <div class="question">${question}</div>
+    <div id="choices" class="input">
         <div id="opt0" class="options" style="border-radius: 0px 20px 0px 0px;"><div class="number" >1</div><div class="label">Hate</div></div>
         <div id="opt1" class="options"><div class="number">2</div><div class="label">Dislike</div></div>
         <div id="opt2" class="options"><div class="number">3</div><div class="label">Neutral</div></div>
@@ -107,8 +107,49 @@ function printQuestion (q_numb) {
     </div>
     `
     q_block.insertAdjacentHTML("beforeend",contentHTML) 
-    
     addRadioEvent(q_numb)
+
+    let next_div = document.getElementById("flow-index1")
+    next_div.textContent = ""
+    if (q_numb < 59) {
+        let next_question = questionsList[q_numb + 1]
+        let next_contentHTML= `
+        <div class="question">${next_question}</div>
+        <div style="display: flex;flex-flow: column;" class="input">
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+        </div>
+        `
+        next_div.style.opacity = "0.3"
+        next_div.insertAdjacentHTML("beforeend",next_contentHTML)
+    }
+
+    let last_div = document.getElementById("flow-index-1")
+    last_div.textContent = ""
+    if (q_numb > 0) {
+        let last_question = questionsList[q_numb - 1]
+        let last_contentHTML= `
+        <div class="question">${last_question}</div>
+        <div style="display: flex;flex-flow: column;" class="input">
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+            <div class="number">4</div>
+            <div class="number">5</div>
+        </div>
+        `
+        last_div.insertAdjacentHTML("beforeend",last_contentHTML)
+        last_div.style.opacity = "0.3"
+        let choiceList = last_div.getElementsByClassName("number")
+        let answer = choiceList[results[q_numb-1]]
+        answer.style.backgroundColor = "#ef6c77 "
+    }
+
+
+
     
 }
 
@@ -124,8 +165,8 @@ function addRadioEvent (q_numb) {
             }
 
             let point = parseInt(clicked_btn.getElementsByClassName("number")[0].textContent) - 1
-            console.log(q_numb)
-            console.log(results.length)
+            // console.log(q_numb)
+            // console.log(results.length)
             if (q_numb < results.length) {
                 results[q_numb] = point
             }
@@ -139,38 +180,32 @@ function addRadioEvent (q_numb) {
 function printProgress(q_numb) {
     var progress = document.getElementById("progress")
     progress.textContent = ""
-    // var question_numb = q*6+i+1
-    let rising_progress = document.getElementById("rising-progress")
-    
+   
     let percentage = Math.floor(q_numb/60*100)
-    var progressHTML = `
-        ${percentage}%
-    `
-    progress.insertAdjacentHTML("beforeend",progressHTML);
-    let height = parseInt(rising_progress.style.height.substring(0,3)) / 60
+    progress.textContent = `: ${percentage}%`
+
     let white_space = document.getElementById("white-space")
-    white_space.style.height = `${height*(60-q_numb)}px`
-    // console.log(results)
+    white_space.style.height = `${percentage}%`
 }
 
 // After finish all
 function finishAllQuestions () {
-    var q_sequence = document.getElementById("q-sequence")
-    q_sequence.textContent = ""
-    var contentHTML = `
-    <div id="finish-container">
-        <h2>You have finish all questions.</h2>
-        <h4 style="margin: 0px;font-weight: lighter;">If you are ready use the submit button to see your results:</h4>
-        <div id="submit-container"><button id="submit-btn">Submit</button></div>
-    </div>
-    `
-    q_sequence.insertAdjacentHTML("beforeend",contentHTML)
+    // var q_container = document.getElementById("q-sequence")
+    // q_container.textContent = ""
+    // var contentHTML = `
+    // <div id="finish-container">
+    //     <h2>You have finish all questions.</h2>
+    //     <h4 style="margin: 0px;font-weight: lighter;">If you are ready use the submit button to see your results:</h4>
+    //     <div id="submit-container"><button id="submit-btn">Submit</button></div>
+    // </div>
+    // `
+    // q_container.insertAdjacentHTML("beforeend",contentHTML)
 
-    var submit_btn = document.getElementById("submit-btn")
-    submit_btn.addEventListener("click",function () {
+    // var submit_btn = document.getElementById("submit-btn")
+    // submit_btn.addEventListener("click",function () {
         window.localStorage.setItem("quiz_data",JSON.stringify(results))
         window.open("result.html","_self")
-    })
+    // })
 }
 
 
@@ -204,7 +239,10 @@ next_btn.addEventListener("click",function() {
     if (q_numb < results.length) {
         nextFunction()
     }
-    else {alert("Please answer the question!")}
+    else {
+        results[q_numb] = 2
+        nextFunction()
+    }
 })
 
 var back_btn = document.getElementById("back-btn")

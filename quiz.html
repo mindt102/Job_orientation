@@ -6,32 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Livvic|Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="quiz.css">
-    
+    <script src="https://kit.fontawesome.com/961aa4e91d.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Livvic|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header_footer.css">
     <title>Career quiz</title>
 
 </head>
 <body>
     <div id="root">
-        <div id="top"></div>
+        <!-- <div id="top"></div> -->
         <div id="content" class="row">
-            <div id="q-container" style="background: linear-gradient(to top, #ff6666 0%, #99ff33 100%);">
+            <div id="q-container" style="display: flex;flex-flow: column;justify-content: center;" >
                 <div id="q-sequence">
-                    <div id="q-block" class="row">
+                    <div id="flow-index-1" style="height: 100%;width: 30%;display: flex;flex-flow: row;justify-content: center;align-items: center;"></div>
+                    <div id="flow-index0" style="height:100%;width: 40%;display: flex;flex-flow: column;justify-content: center;">
+                        <div id="q-block" class="row">
+                        </div>
                     </div>
-                    <div class="row" id="btn-container">
+                    <div id="flow-index1" style="height:100%;width: 30%;display: flex;flex-flow: row;justify-content: center;align-items: center;">
+                    </div>
+                </div>
+                <div class="row" id="btn-container">
                         <button id="back-btn">Back</button>
                         <button id="next-btn">Next</button>
-                    </div>
                 </div>
             </div>
 
             <div id="progress_container" style="font-size: 40px;">
-                <div style="display:flex;flex-flow:row;width: 100%;height: 60px;justify-content: center;align-items: center; background-color: mediumorchid">
-                    <div>Progress: </div>
+                <div id="progress-box" >
+                    <div>Progress</div>
                     <div id="progress" style="z-index: 0"></div>
                 </div>
-                <div id="rising-progress" style="height: 690px;width: 100%;display: flex;justify-content: flex-start;flex-flow: column;background: linear-gradient(to top right, #33ccff 0%, #ff99cc 100%)">
-                    <div id="white-space" style="height: 100px;width:100%;background-color: white"></div>
+
+                <div id="rising-progress">
+                    <div id="progress-bar">
+                        <div id="white-space"></div>
+                    </div>                    
                 </div>
                 
             </div>
@@ -39,6 +49,7 @@
     </div>
     <!-- <script src="quiz.js"></script> -->
     <script src="quiz_2.js"></script>
+    <script src="header_footer.js"></script>
 </body>
 </html>
 
