@@ -91,20 +91,6 @@ const quiz_data = [
     },
 ]
 
-//  Create a list of question from the data
-let questionsList  = []
-for (let q=0; q < 10; q++) {
-    for (let i=0; i < 6;i++) {
-        questionsList.push(quiz_data[i].questions[q])
-    }
-}
-
-// Initialize the results
-let results = []
-
-// Start from 0
-let q_numb = 0
-
 // Print question depend on the question number
 function printQuestion (q_numb) {
     let question = questionsList[q_numb]
@@ -113,18 +99,21 @@ function printQuestion (q_numb) {
     var contentHTML = `
     <div id="question">${question}</div>
     <div id="input">
-        <div class="options" style="border-radius: 0px 20px 0px 0px;"><div class="number" >1</div><div class="label">Hate</div></div>
-        <div class="options"><div class="number">2</div><div class="label">Dislike</div></div>
-        <div class="options"><div class="number">3</div><div class="label">Neutral</div></div>
-        <div class="options"><div class="number">4</div><div class="label">Like</div></div>
-        <div class="options" style="border-radius: 0px 0px 20px 0px;"><div id="last" class="number">5</div><div class="label">Love</div></div>
+        <div id="opt0" class="options" style="border-radius: 0px 20px 0px 0px;"><div class="number" >1</div><div class="label">Hate</div></div>
+        <div id="opt1" class="options"><div class="number">2</div><div class="label">Dislike</div></div>
+        <div id="opt2" class="options"><div class="number">3</div><div class="label">Neutral</div></div>
+        <div id="opt3" class="options"><div class="number">4</div><div class="label">Like</div></div>
+        <div id="opt4" class="options" style="border-radius: 0px 0px 20px 0px;"><div id="last" class="number">5</div><div class="label">Love</div></div>
     </div>
     `
-    q_block.insertAdjacentHTML("beforeend",contentHTML)
-    addRadioEvent()
+    q_block.insertAdjacentHTML("beforeend",contentHTML) 
+    
+    addRadioEvent(q_numb)
+    
 }
 
-function addRadioEvent () {
+// Add function to add results after choosing an option
+function addRadioEvent (q_numb) {
     var options = document.getElementsByClassName("options")
     for (var o=0;o<options.length;o++) {
         var option = options[o]
@@ -133,10 +122,96 @@ function addRadioEvent () {
             if (clicked_btn.className != "options") {
                 clicked_btn = clicked_btn.parentNode
             }
-            console.log(options[0])
-            console.log(clicked_btn.getElementsByClassName("number"))
+
+            let point = parseInt(clicked_btn.getElementsByClassName("number")[0].textContent) - 1
+            console.log(q_numb)
+            console.log(results.length)
+            if (q_numb < results.length) {
+                results[q_numb] = point
+            }
+            else {results.push(point)}
+            nextFunction()
         })
     }
 }
 
+// Print progress
+function printProgress(q_numb) {
+    var progress = document.getElementById("progress")
+    progress.textContent = ""
+    // var question_numb = q*6+i+1
+    let rising_progress = document.getElementById("rising-progress")
+    
+    let percentage = Math.floor(q_numb/60*100)
+    var progressHTML = `
+        ${percentage}%
+    `
+    progress.insertAdjacentHTML("beforeend",progressHTML);
+    let height = parseInt(rising_progress.style.height.substring(0,3)) / 60
+    let white_space = document.getElementById("white-space")
+    white_space.style.height = `${height*(60-q_numb)}px`
+    // console.log(results)
+}
+
+// After finish all
+function finishAllQuestions () {
+    var q_sequence = document.getElementById("q-sequence")
+    q_sequence.textContent = ""
+    var contentHTML = `
+    <div id="finish-container">
+        <h2>You have finish all questions.</h2>
+        <h4 style="margin: 0px;font-weight: lighter;">If you are ready use the submit button to see your results:</h4>
+        <div id="submit-container"><button id="submit-btn">Submit</button></div>
+    </div>
+    `
+    q_sequence.insertAdjacentHTML("beforeend",contentHTML)
+
+    var submit_btn = document.getElementById("submit-btn")
+    submit_btn.addEventListener("click",function () {
+        window.localStorage.setItem("quiz_data",JSON.stringify(results))
+        window.open("result.html","_self")
+    })
+}
+
+
+function nextFunction () {
+    q_numb ++ 
+    if (q_numb < questionsList.length) {
+        printQuestion(q_numb)
+        printProgress(q_numb)
+    }
+    else {
+        printProgress(q_numb)
+        finishAllQuestions()
+    }
+}
+//  Create a list of question from the data
+let questionsList  = []
+for (let q=0; q < 10; q++) {
+    for (let i=0; i < 6;i++) {
+        questionsList.push(quiz_data[i].questions[q])
+    }
+}
+// Initialize the results
+let results = []
+
+// Start from 0
+let q_numb = 0
 printQuestion(q_numb)
+printProgress(q_numb)
+var next_btn = document.getElementById("next-btn")
+next_btn.addEventListener("click",function() {
+    if (q_numb < results.length) {
+        nextFunction()
+    }
+    else {alert("Please answer the question!")}
+})
+
+var back_btn = document.getElementById("back-btn")
+back_btn.addEventListener("click",function () {
+    if (results.length > 0) {
+        q_numb--
+        printQuestion(q_numb)
+        printProgress(q_numb)
+    }
+})

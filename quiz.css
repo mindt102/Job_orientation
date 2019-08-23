@@ -20,21 +20,23 @@ html,body,#root {
     background-color: rgb(170, 20, 170);
     color: white;
     border-radius: 10px 0px 0px 10px;
-    width: 150px;
+    width: 70px;
     text-align: center;
     border-right-color: white;
-    border-width: 30px;
+    /* border-width: 30px; */
     cursor: pointer;
+    height: 25px;
     }
 
 #next-btn {
         background-color: rgb(170, 20, 170);
         color: white;
         border-radius: 0px 10px 10px 0px;
-        width: 150px;
+        width: 70px;
+        height: 25px;
         text-align: center;
         border-left-color: white;
-        border-width: 30px;
+        /* border-width: 30px; */
         cursor: pointer;
         }
 
@@ -132,15 +134,15 @@ html,body,#root {
     flex-flow: row;
     align-items: center;
 }
+
 .options:hover {
     background-color: gray;
     color: white;
     font: bold;
-    /* border: 0px; */
 }
 
 
-#view-all-container,#submit-container {
+#submit-container {
     display: flex;
     justify-content: center;
     
