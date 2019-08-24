@@ -12,7 +12,7 @@ html , body, #root {
 body {
     /* font-family: sans-serif; */
     /* font-family: 'Nunito Sans', sans-serif; */
-    background-image: url("main_pic.jpg");
+    background-image: url("home.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed ;
@@ -20,8 +20,8 @@ body {
 
 #content {
     display: flex;
-    align-items: flex-start;
-    height: 500px;
+    align-items: center;
+    height: 700px;
 }
 .btn {
     display: inline-block;
@@ -64,7 +64,7 @@ body {
     color: white;
     font-weight: bold;
     border: 3px solid #f1f1f1;
-    position: absolute;
+    position: relative;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);

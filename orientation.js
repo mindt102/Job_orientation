@@ -51,7 +51,7 @@ for (let i=0;i<abilities.length;i++) {
 }
 
 let contentHTML = `    
-<div style="text-align:center;color: #004488;margin:20px"><h1 style="font-size:50px"><b id="accountants"> ${name}</b></h1></div> 
+<div style="text-align:center;color: white;margin:20px"><h1 style="font-size:50px"><b id="accountants"> ${name}</b></h1></div> 
 <div class="row" style="justify-content:center;margin-top:100px;">
     <div id="description-container" class="rectangle" style="margin-right:20px">
         <p> <div> <b> Description </b> </div> 

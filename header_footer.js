@@ -5,19 +5,19 @@ const headerHTML =
         <a href="home_page.html"  id="Logo" ></a>
         <div id="search" class="row">
             <a href="#" class="icon" id="search_btn">
-                    <i class="fas fa-search fa-3x" style="color:#3e85d6;"></i>
+                <i class="fas fa-search fa-3x" style="color:white"></i>
             </a>
         </div>
     </div>
     <div id="align-icons">
         <a href="quiz.html" class="icon">
-            <i class="far fa-play-circle fa-3x" style="color:#3e85d6;"></i>
+            <i class="far fa-play-circle fa-3x" style="color:white"></i>
         </a>
         <a href="#ABOUT" class="icon">
-            <i class="far fa-question-circle fa-3x" style="color:#3e85d6;"></i>
+            <i class="far fa-question-circle fa-3x" style="color:white"></i>
         </a>
         <a href="#" class="icon">
-            <i class="far fa-user-circle fa-3x" style="color:#3e85d6;"></i>
+            <i class="far fa-user-circle fa-3x" style="color:white"></i>
         </a>
     </div>
 </div>
@@ -30,14 +30,14 @@ const footerHTML =
     <div id="ABOUT">
         <div class ="align-smaller-abouts">
             <div style="width:100%;display:flex;flex-flow:row;justify-content:space-around">
-                <i class="fas fa-bolt fa-3x" style="color:black;"></i>
+                <i class="fas fa-bolt fa-3x"></i>
                 <h3>Responsive</h3>
             </div>
             <h5 class ="text-align">Our team will response to your questions and problems ASAP !</h5>
         </div>
         <div class ="align-smaller-abouts">
             <div style="width:100%;display:flex;flex-flow:row;justify-content:space-around">
-                <i class="far fa-heart fa-3x" style="color:black;"></i>
+                <i class="far fa-heart fa-3x"></i>
                 <h3>Relationship</h3>
             </div>
             <h5 class ="text-align smaller-abouts">We believe that it’s the relationship that we build with you that will enable you to gain traction in the career that you’re pursuing.  We think of each of our clients as colleagues and want a long-term career partnership with you.</h5>
@@ -140,7 +140,7 @@ function search(inpString) {
                 name += "..."
             }
             searchResults += `<div id=${data[i].id} class="autocomplete">${name}</div>`
-            if (resultsCount > 9) {break}
+            if (resultsCount > 8) {break}
         }
     }
     if (searchResults.length == 0) {searchResults = '<div class="autocomplete">No match</div>'}

@@ -135,9 +135,13 @@ html,body,#root {
 }
 
 .options:hover {
-    background-color: gray;
+    background-color: #514d8c;
     color: white;
     font: bold;
+}
+
+.options:hover .number {
+    background-color: rgb(239, 108, 119);
 }
 
 
