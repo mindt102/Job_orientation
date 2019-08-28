@@ -54,12 +54,13 @@ let contentHTML = `
 <div style="text-align:center;color: white;margin:20px"><h1 style="font-size:50px"><b id="accountants"  style="font-family: 'Viga', sans-serif;"> ${name}</b></h1></div> 
 <div class="row" style="justify-content:center;margin-top:100px;">
     <div id="description-container" class="rectangle" style="margin-right:20px">
-        <p> <div> <b style="font-family: 'Viga', sans-serif;"> Description </b> </div> 
-            ${description}
-        </p>
+        <div> <b style="font-family: 'Viga', sans-serif;"> Description</b></div> 
+        <br>    
+        ${description}
+        
     </div>
     <div id="tasks-container" class="rectangle" style="margin-left:20px">
-        <div> <b id="task" style="font-family: 'Viga', sans-serif;">Tasks</b> </div> 
+        <div> <b id="task" style="font-family: 'Viga', sans-serif;">Tasks</b></div> 
         <ul>
             ${tasksHTML}
         </ul>

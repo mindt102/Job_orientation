@@ -9,15 +9,19 @@ const headerHTML =
             </a>
         </div>
     </div>
-    <div id="align-icons">
+    <div id="top_right">
         <a href="quiz.html" class="icon">
             <i class="far fa-play-circle fa-3x" style="color:white"></i>
         </a>
         <a href="#ABOUT" class="icon">
             <i class="far fa-question-circle fa-3x" style="color:white"></i>
         </a>
-        <a href="#" class="icon">
-            <i class="far fa-user-circle fa-3x" style="color:white"></i>
+        <a href="#" class="icon" id="user">
+            <i class="far fa-user-circle fa-3x" style="color:white;"></i>
+            <div id="box-container">
+                <div id="box1" class="box">Log in</div>
+                <div id="box2" class="box">Sign up</div>
+            </div>
         </a>
     </div>
 </div>
@@ -150,3 +154,49 @@ function search(inpString) {
 
 // Add footer after content
 content.insertAdjacentHTML("afterend",footerHTML)
+
+// Get the current user
+currentUser = localStorage.getItem("currentUser")
+
+// Get the user choices
+box1 = document.getElementById("box1")
+box2 = document.getElementById("box2")
+
+// There is a current user
+if (currentUser != "{}") {
+    // Change data from string to JSON
+    currentUser = JSON.parse(currentUser)
+    
+    // If user haven't take a test 
+    if (currentUser.testResult.length == 0) {
+        addUserChoices(box1,"Take a test","quiz.html")
+        addUserChoices(box2,"Log out","home_page.html")
+    }
+    // If user have already taken a test
+    else {
+        addUserChoices(box1,"Your results","result.html")
+        addUserChoices(box2,"Log out","home_page.html")
+    }
+}
+// If there is no current user
+else {
+    addUserChoices(box1,"Log in","signin.html")
+    addUserChoices(box2,"Sign up","signup.html")
+}
+
+
+
+// Add function to boxes
+function addUserChoices (box,name,link) {
+    box.textContent = name
+    box.addEventListener("click",function() {
+        if (name == "Log out") {
+            localStorage.setItem("currentUser",JSON.stringify({}))
+            localStorage.setItem("results",JSON.stringify({}))
+        }
+        window.open(link,"_self")
+    })
+}
+
+console.log("All users:", JSON.parse(localStorage.getItem("usersdata")))
+console.log("Current user: ",JSON.parse(localStorage.getItem("currentUser")))

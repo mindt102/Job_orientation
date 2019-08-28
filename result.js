@@ -1,27 +1,32 @@
-var results = window.localStorage.getItem("quiz_data")
+let results = localStorage.getItem("results")
 results = JSON.parse(results)
 
+// Get current user
+let currentUser = localStorage.getItem("currentUser")
 
-let realistic = 0       // mod 6 = 0
-let investigative = 0   // mod 6 = 1          
-let artistic = 0        // mod 6 = 2
-let social = 0          // mod 6 = 3
-let enterprising = 0    // mod 6 = 4
-let conventional = 0    // mod 6 = 5
+// Get change all users data
+let allUsers = localStorage.getItem("usersdata")
+allUsers = JSON.parse(allUsers)
 
-for (let i = 0; i < results.length;i++) {
-    if (i % 6 == 0) {realistic += results[i]}
-    if (i % 6 == 1) {investigative += results[i]}
-    if (i % 6 == 2) {artistic += results[i]}
-    if (i % 6 == 3) {social += results[i]}
-    if (i % 6 == 4) {enterprising += results[i]}
-    if (i % 6 == 5) {conventional += results[i]}
+if (currentUser != "{}") {
+    currentUser = JSON.parse(currentUser)
+    currentUser.testResult = results
+    for (let i=0;i<allUsers.length;i++) {
+        let user = allUsers[i]
+        if (user.email == currentUser.email) {
+            allUsers[i] = currentUser
+        }
+    }
+
+    localStorage.setItem("currentUser",JSON.stringify(currentUser))
+    localStorage.setItem("usersdata",JSON.stringify(allUsers))
 }
 
+
 let points = document.getElementsByClassName("points")
-points[0].textContent = realistic
-points[1].textContent = investigative
-points[2].textContent = artistic
-points[3].textContent = social
-points[4].textContent = enterprising
-points[5].textContent = conventional
+points[0].textContent = results.realistic
+points[1].textContent = results.investigative
+points[2].textContent = results.artistic
+points[3].textContent = results.social
+points[4].textContent = results.enterprising
+points[5].textContent = results.conventional

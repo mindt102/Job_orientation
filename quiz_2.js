@@ -165,8 +165,6 @@ function addRadioEvent (q_numb) {
             }
 
             let point = parseInt(clicked_btn.getElementsByClassName("number")[0].textContent) - 1
-            // console.log(q_numb)
-            // console.log(results.length)
             if (q_numb < results.length) {
                 results[q_numb] = point
             }
@@ -190,22 +188,36 @@ function printProgress(q_numb) {
 
 // After finish all
 function finishAllQuestions () {
-    // var q_container = document.getElementById("q-sequence")
-    // q_container.textContent = ""
-    // var contentHTML = `
-    // <div id="finish-container">
-    //     <h2>You have finish all questions.</h2>
-    //     <h4 style="margin: 0px;font-weight: lighter;">If you are ready use the submit button to see your results:</h4>
-    //     <div id="submit-container"><button id="submit-btn">Submit</button></div>
-    // </div>
-    // `
-    // q_container.insertAdjacentHTML("beforeend",contentHTML)
+    // Calculate the results
+    let realistic = 0       // mod 6 = 0
+    let investigative = 0   // mod 6 = 1          
+    let artistic = 0        // mod 6 = 2
+    let social = 0          // mod 6 = 3
+    let enterprising = 0    // mod 6 = 4
+    let conventional = 0    // mod 6 = 5
+    
+    for (let i = 0; i < results.length;i++) {
+        if (i % 6 == 0) {realistic += results[i]}
+        if (i % 6 == 1) {investigative += results[i]}
+        if (i % 6 == 2) {artistic += results[i]}
+        if (i % 6 == 3) {social += results[i]}
+        if (i % 6 == 4) {enterprising += results[i]}
+        if (i % 6 == 5) {conventional += results[i]}
+    }
 
-    // var submit_btn = document.getElementById("submit-btn")
-    // submit_btn.addEventListener("click",function () {
-        window.localStorage.setItem("quiz_data",JSON.stringify(results))
-        window.open("result.html","_self")
-    // })
+    results = {
+        realistic: realistic,
+        investigative: investigative,
+        artistic: artistic,
+        social:social,
+        enterprising: enterprising,
+        conventional: conventional,
+    }
+    
+
+    localStorage.setItem("results",JSON.stringify(results))
+    window.open("result.html","_self")
+
 }
 
 

@@ -13,20 +13,18 @@
 
 </head>
 <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" onsubmit=formSubmit(event)>
         <img src="logo.png" alt=""width="150" height="150">
         <h1 class=" ">Please sign in</h1>
         <label for="inputEmail" class="sr-only"></label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus autocomplete="on">
         <label for="inputPassword" class="sr-only"></label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
+        <input type="password" id="password" class="form-control" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+        <p>If you dont't have an account <a href="signup.html" style="color:dodgerblue">Sign up</a>.</p>
         <button class="btn btn-primary btn-block" type="submit">Sign in</button>
 
     </form>
+
+    <script src="signin.js"></script>
 </body>
 </html>

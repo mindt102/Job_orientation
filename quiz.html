@@ -16,25 +16,26 @@
 <body>
     <div id="root">
         <div id="content" class="row">
-            <!-- <div id="background_image"></div> -->
-            <div id="q-container" style="display: flex;flex-flow: column;justify-content: center;" >
-                <div id="background_image" ></div>
-                <div id="q-sequence">
-                    <div id="flow-index-1" style="height: 100%;width: 30%;display: flex;flex-flow: row;justify-content: center;align-items: center;"></div>
-                    <div id="flow-index0" style="height:100%;width: 40%;display: flex;flex-flow: column;justify-content: center;">
-                        <div id="q-block" class="row">
+            <div class="position">
+                <img src="quiz.jpg" id="background_image"></img>
+                <div id="q-container">
+                    <div id="q-sequence">
+                        <div id="flow-index-1" style="height: 100%;width: 30%;display: flex;flex-flow: row;justify-content: center;align-items: center;"></div>
+                        <div id="flow-index0" style="height:100%;width: 40%;display: flex;flex-flow: column;justify-content: center;">
+                            <div id="q-block" class="row">
+                            </div>
+                        </div>
+                        <div id="flow-index1" style="height:100%;width: 30%;display: flex;flex-flow: row;justify-content: center;align-items: center;">
                         </div>
                     </div>
-                    <div id="flow-index1" style="height:100%;width: 30%;display: flex;flex-flow: row;justify-content: center;align-items: center;">
+                    <div class="row" id="btn-container">
+                            <button id="back-btn">Back</button>
+                            <button id="next-btn">Next</button>
                     </div>
-                </div>
-                <div class="row" id="btn-container">
-                        <button id="back-btn">Back</button>
-                        <button id="next-btn">Next</button>
-                </div>
+                </div>        
             </div>
-
-            <div id="progress_container" style="font-size: 40px;">
+            
+            <div id="progress_container">
                 <div id="progress-box" >
                     <div>Progress</div>
                     <div id="progress" style="z-index: 0"></div>
