@@ -29,7 +29,7 @@ const headerHTML =
 
 const footerHTML = 
 `
-<div id="footer">
+<div id="footer" style="font-family: 'Livvic', sans-serif;">
     <div style="width:100%;text-align:center;margin-bottom: 50px"><h1>ABOUT US</h1></div>
     <div id="ABOUT">
         <div class ="align-smaller-abouts">
