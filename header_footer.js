@@ -2,7 +2,7 @@ const headerHTML =
 `
 <div id="header" class="row">
     <div id="top_left" class="row icon">
-        <a href="home_page.html"  id="Logo" ></a>
+        <a href="index.html"  id="Logo" ></a>
         <div id="search" class="row">
             <a href="#" class="icon" id="search_btn">
                 <i class="fas fa-search fa-3x" style="color:white"></i>
@@ -170,12 +170,12 @@ if (currentUser != "{}") {
     // If user haven't take a test 
     if (currentUser.testResult.length == 0) {
         addUserChoices(box1,"Take a test","quiz.html")
-        addUserChoices(box2,"Log out","home_page.html")
+        addUserChoices(box2,"Log out","index.html")
     }
     // If user have already taken a test
     else {
         addUserChoices(box1,"Your results","result.html")
-        addUserChoices(box2,"Log out","home_page.html")
+        addUserChoices(box2,"Log out","index.html")
     }
 }
 // If there is no current user
