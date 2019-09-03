@@ -14,7 +14,7 @@ html,body,#root,#background {
 }
 
 .square {
-    padding:15px 10px;
+    padding:3rem 1rem ;
     width:25rem;
     /* height:25rem; */
     text-align:justify;
