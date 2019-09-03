@@ -20,7 +20,7 @@ function formSubmit(event){
             localStorage.setItem("results",JSON.stringify(currentUser.testResult))
             localStorage.setItem("currentUser",JSON.stringify(currentUser))
 
-            window.open("home_page.html","_self")
+            window.open("index.html","_self")
         }
     }
 

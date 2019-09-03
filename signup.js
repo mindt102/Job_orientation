@@ -49,7 +49,7 @@ function formSubmit(event){
             usersData = JSON.parse(usersData)
 
             // Return home after signing up successfully
-            window.open("home_page.html","_self")
+            window.open("index.html","_self")
         }
     }
     else {
