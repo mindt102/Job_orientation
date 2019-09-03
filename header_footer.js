@@ -157,7 +157,10 @@ content.insertAdjacentHTML("afterend",footerHTML)
 
 // Get the current user
 currentUser = localStorage.getItem("currentUser")
-
+if (currentUser == null) {
+    currentUser = "{}"
+    localStorage.setItem("currentUser",currentUser)
+}
 // Get the user choices
 box1 = document.getElementById("box1")
 box2 = document.getElementById("box2")
@@ -198,5 +201,8 @@ function addUserChoices (box,name,link) {
     })
 }
 
-console.log("All users:", JSON.parse(localStorage.getItem("usersdata")))
-console.log("Current user: ",JSON.parse(localStorage.getItem("currentUser")))
+// console.log("All users:", JSON.parse(localStorage.getItem("usersdata")))
+// console.log("Current user: ",JSON.parse(localStorage.getItem("currentUser")))
+
+// let abc = localStorage.getItem("abc")
+// console.log(abc == null)

@@ -11,6 +11,10 @@ function formSubmit(event){
 
         // Get all users data from local storage
         let usersData = localStorage.getItem("usersdata")
+        if (usersData == null) {
+            usersData = "[]"
+            localStorage.setItem("usersdata",usersData)
+        }
         usersData = JSON.parse(usersData)
 
         // Check if email has already been used

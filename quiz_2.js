@@ -217,7 +217,7 @@ function finishAllQuestions () {
 
     localStorage.setItem("results",JSON.stringify(results))
     window.open("result.html","_self")
-
+    
 }
 
 
