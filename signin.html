@@ -10,21 +10,26 @@
     <link href="https://fonts.googleapis.com/css?family=Bangers|Livvic|Pacifico&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="test6.css"> -->
     <link rel="stylesheet" href="signin.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Livvic|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header_footer.css">
+    <script src="https://kit.fontawesome.com/961aa4e91d.js"></script>
 </head>
-<body class="text-center">
-    <form class="form-signin" onsubmit=formSubmit(event)>
-        <img src="logo.png" alt=""width="150" height="150">
-        <h1 class=" ">Please sign in</h1>
-        <label for="inputEmail" class="sr-only"></label>
-        <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus autocomplete="on">
-        <label for="inputPassword" class="sr-only"></label>
-        <input type="password" id="password" class="form-control" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-        <p>If you dont't have an account <a href="signup.html" style="color:dodgerblue">Sign up</a>.</p>
-        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
-
-    </form>
-
+<body>
+    <div id="content" style="text-align: center;">
+        <form class="form-signin" onsubmit=formSubmit(event)>
+                <img src="logo.png" alt=""width="150" height="150">
+                <h1 class=" ">Please sign in</h1>
+                <label for="inputEmail" class="sr-only"></label>
+                <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus autocomplete="on">
+                <label for="inputPassword" class="sr-only"></label>
+                <input type="password" id="password" class="form-control" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                <p>If you dont't have an account <a href="signup.html" style="color:dodgerblue">Sign up</a>.</p>
+                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div>
+    
     <script src="signin.js"></script>
+    <script src="data.js"></script>
+    <script src="header_footer.js"></script>
 </body>
 </html>
