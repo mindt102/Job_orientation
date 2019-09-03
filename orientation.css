@@ -16,7 +16,7 @@ html,body,#root,#background {
 .square {
     padding:15px 10px;
     width:25rem;
-    height:25rem;
+    /* height:25rem; */
     text-align:justify;
     border: solid grey 3px;
     border-radius: 15px;
